@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 
 const connectDB = require("./config/db");
 const foodRoutes = require("./routes/foodRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/foods", foodRoutes);
+app.use("/api/orders", orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 
